@@ -23,14 +23,14 @@ val homeModule = module {
     }
 
     factory {
+        getBaseSchedulerProvider()
+    }
+
+    factory {
         HomeProcessorHolder(
             get<ProductRepository>(),
             get<BaseSchedulerProvider>()
         )
-    }
-
-    factory {
-        getBaseSchedulerProvider()
     }
 }
 

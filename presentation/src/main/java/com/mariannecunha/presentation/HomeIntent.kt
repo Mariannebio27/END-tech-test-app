@@ -4,5 +4,4 @@ import com.mariannecunha.domain.mvibase.MviIntent
 
 sealed class HomeIntent : MviIntent {
     object LoadAllMenswearIntent : HomeIntent()
-    object ClearAllMenswearIntent : HomeIntent()
 }

@@ -1,6 +1,9 @@
 package com.mariannecunha.presentation
 
 import androidx.lifecycle.ViewModel
+import com.mariannecunha.domain.HomeAction
+import com.mariannecunha.domain.HomeResult
+import com.mariannecunha.domain.HomeResult.LoadAllMenswearResult
 import com.mariannecunha.domain.mvibase.MviViewModel
 import com.mariannecunha.domain.util.notOfType
 import com.mariannecunha.presentation.HomeIntent.LoadAllMenswearIntent
@@ -36,7 +39,7 @@ class HomeViewModel(
         return intentsSubject
             .compose(intentFilter)
             .map(this::actionFromIntent)
-            .compose(actionProcessorHolder.actionProcessor)
+            .compose(actionProcessorHolder.loadAllMenswearProcessor)
             .scan(HomeViewState.idle(), reducer)
             .distinctUntilChanged()
             .replay(1)
@@ -46,7 +49,6 @@ class HomeViewModel(
     private fun actionFromIntent(intent: HomeIntent): HomeAction {
         return when (intent) {
             is LoadAllMenswearIntent -> HomeAction.LoadAllMenswearAction
-            is HomeIntent.ClearAllMenswearIntent -> HomeAction.ClearAllMenswearAction
         }
     }
 
@@ -54,25 +56,17 @@ class HomeViewModel(
         private val reducer =
             BiFunction { previousState: HomeViewState, result: HomeResult ->
                 when (result) {
-                    is HomeResult.LoadAllMenswearResult -> when (result) {
-                        is HomeResult.LoadAllMenswearResult.Success -> {
+                    is LoadAllMenswearResult -> when (result) {
+                        is LoadAllMenswearResult.Success -> {
                             previousState.copy(isLoading = false, products = result.products)
                         }
-                        is HomeResult.LoadAllMenswearResult.Failure -> previousState.copy(
+                        is LoadAllMenswearResult.Failure -> previousState.copy(
                             isLoading = false,
                             error = result.error
                         )
-                        is HomeResult.LoadAllMenswearResult.Loading -> previousState.copy(isLoading = true)
-                    }
-                    is HomeResult.ClearAllMenswearResult -> when (result) {
-                        is HomeResult.ClearAllMenswearResult.Success -> {
-                            previousState.copy(isLoading = false, products = result.products)
-                        }
-                        is HomeResult.ClearAllMenswearResult.Failure -> previousState.copy(
-                            isLoading = false,
-                            error = result.error
+                        is LoadAllMenswearResult.Loading -> previousState.copy(
+                            isLoading = true
                         )
-                        is HomeResult.ClearAllMenswearResult.Loading -> previousState.copy(isLoading = true)
                     }
                 }
             }

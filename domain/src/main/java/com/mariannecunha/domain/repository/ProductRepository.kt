@@ -5,5 +5,4 @@ import io.reactivex.Observable
 
 interface ProductRepository {
     fun getProducts(): Observable<GlobalProducts>
-//    fun clearAllProducts(): Observable<GlobalProducts>
 }

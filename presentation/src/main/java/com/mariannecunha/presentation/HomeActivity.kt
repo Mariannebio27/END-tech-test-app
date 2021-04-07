@@ -11,7 +11,6 @@ import com.mariannecunha.domain.mvibase.MviView
 import com.mariannecunha.presentation.databinding.ActivityHomeBinding
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
-import io.reactivex.subjects.PublishSubject
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,8 +19,6 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
     private lateinit var binding: ActivityHomeBinding
     private val viewModel: HomeViewModel by viewModel()
     private val adapter: MenswearAdapter by inject()
-    private val clearAllMenswearIntentPublisher =
-        PublishSubject.create<HomeIntent.ClearAllMenswearIntent>()
     private val disposables = CompositeDisposable()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,10 +41,7 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
     }
 
     override fun intents(): Observable<HomeIntent> {
-        return Observable.merge(
-            loadIntent(),
-            clearIntent()
-        )
+        return Observable.just(HomeIntent.LoadAllMenswearIntent)
     }
 
     override fun render(state: HomeViewState) = with(binding) {
@@ -64,7 +58,7 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
 
         if (state.error != null) {
             Toast.makeText(this@HomeActivity, "We had an error.", Toast.LENGTH_SHORT).show()
-            Log.e("TAG", "Error loading creatures: ${state.error.localizedMessage}")
+            Log.e("TAG", "Error loading: ${state.error.localizedMessage}")
         }
     }
 
@@ -85,14 +79,6 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
     private fun bind() {
         disposables.add(viewModel.states().subscribe(this::render))
         viewModel.processIntents(intents())
-    }
-
-    private fun loadIntent(): Observable<HomeIntent.LoadAllMenswearIntent> {
-        return Observable.just(HomeIntent.LoadAllMenswearIntent)
-    }
-
-    private fun clearIntent(): Observable<HomeIntent.ClearAllMenswearIntent> {
-        return clearAllMenswearIntentPublisher
     }
 
     // TODO create extensions
