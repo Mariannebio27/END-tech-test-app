@@ -42,6 +42,9 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
     implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rxBindingVersion"
     implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+    implementation "org.koin:koin-android:2.2.0-rc-4"
+    implementation "org.koin:koin-core:2.2.0-rc-4"
+    implementation "org.koin:koin-androidx-viewmodel:2.2.0-rc-4"
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

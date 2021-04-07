@@ -1,4 +1,4 @@
-package com.mariannecunha.domain
+package com.mariannecunha.domain.mvibase
 
 import io.reactivex.Observable
 
