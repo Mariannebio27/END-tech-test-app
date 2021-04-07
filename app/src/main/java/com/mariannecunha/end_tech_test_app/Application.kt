@@ -1,7 +1,9 @@
 package com.mariannecunha.end_tech_test_app.app
 
 import android.app.Application
+import com.mariannecunha.data.di.dataModule
 import com.mariannecunha.end_tech_test_app.BuildConfig
+import com.mariannecunha.presentation.di.homeModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.logger.AndroidLogger
 import org.koin.core.context.startKoin
@@ -21,7 +23,10 @@ class Application : Application() {
             androidContext(this@Application)
             logger(setupDependencyInjectionLogger())
             modules(
-                listOf()
+                listOf(
+                    homeModule,
+                    dataModule
+                )
             )
         }
     }

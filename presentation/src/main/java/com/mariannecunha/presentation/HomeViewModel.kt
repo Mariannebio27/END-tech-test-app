@@ -45,7 +45,7 @@ class HomeViewModel(
 
     private fun actionFromIntent(intent: HomeIntent): HomeAction {
         return when (intent) {
-            is LoadAllMenswearIntent-> HomeAction.LoadAllMenswearAction
+            is LoadAllMenswearIntent -> HomeAction.LoadAllMenswearAction
             is HomeIntent.ClearAllMenswearIntent -> HomeAction.ClearAllMenswearAction
         }
     }

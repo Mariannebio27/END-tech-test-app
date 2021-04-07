@@ -17,8 +17,8 @@ class HomeProcessorHolder(
                     .map { products -> HomeResult.LoadAllMenswearResult.Success(products) }
                     .cast(HomeResult.LoadAllMenswearResult::class.java)
                     .onErrorReturn(HomeResult.LoadAllMenswearResult::Failure)
-                    .subscribeOn(schedulerProvider.io())
-                    .observeOn(schedulerProvider.ui())
+                    .subscribeOn(schedulerProvider.subscribe)
+                    .observeOn(schedulerProvider.observe)
                     .startWith(HomeResult.LoadAllMenswearResult.Loading)
             }
         }
@@ -30,8 +30,8 @@ class HomeProcessorHolder(
                     .map { products -> HomeResult.ClearAllMenswearResult.Success(products) }
                     .cast(HomeResult.ClearAllMenswearResult::class.java)
                     .onErrorReturn(HomeResult.ClearAllMenswearResult::Failure)
-                    .subscribeOn(schedulerProvider.io())
-                    .observeOn(schedulerProvider.ui())
+                    .subscribeOn(schedulerProvider.subscribe)
+                    .observeOn(schedulerProvider.observe)
                     .startWith(HomeResult.ClearAllMenswearResult.Loading)
             }
         }

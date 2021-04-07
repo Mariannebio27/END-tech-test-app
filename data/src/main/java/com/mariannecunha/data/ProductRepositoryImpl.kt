@@ -9,11 +9,11 @@ class ProductRepositoryImpl(private val service: ProductService) : ProductReposi
 
     override fun getProducts(): Observable<GlobalProducts> {
 
-        return getProducts()
+        return service.getProducts()
     }
 
-    override fun clearAllProducts(): Observable<GlobalProducts> {
-
-        return getProducts()
-    }
+//    override fun clearAllProducts(): Observable<GlobalProducts> {
+//
+//        return getProducts()
+//    }
 }

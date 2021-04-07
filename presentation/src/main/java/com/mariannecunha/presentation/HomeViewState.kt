@@ -1,6 +1,7 @@
 package com.mariannecunha.presentation
 
 import com.mariannecunha.domain.model.GlobalProducts
+import com.mariannecunha.domain.model.Product
 import com.mariannecunha.domain.mvibase.MviViewState
 
 data class HomeViewState(
@@ -11,7 +12,7 @@ data class HomeViewState(
     companion object {
         fun idle(): HomeViewState = HomeViewState(
             isLoading = false,
-            products = GlobalProducts(products = emptyList()),
+            products = GlobalProducts(products = mutableListOf<Product>()),
             error = null
         )
     }

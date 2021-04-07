@@ -1,1 +1,3 @@
-<resources></resources>
+<resources>
+    <string name="no_list_found">No list found.</string>
+</resources>
