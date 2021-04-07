@@ -9,4 +9,10 @@ sealed class HomeResult : MviResult {
         data class Success(val products: GlobalProducts) : LoadAllMenswearResult()
         data class Failure(val error: Throwable) : LoadAllMenswearResult()
     }
+
+    sealed class ClearAllMenswearResult : HomeResult() {
+        object Loading : ClearAllMenswearResult()
+        data class Success(val products: GlobalProducts) : ClearAllMenswearResult()
+        data class Failure(val error: Throwable) : ClearAllMenswearResult()
+    }
 }

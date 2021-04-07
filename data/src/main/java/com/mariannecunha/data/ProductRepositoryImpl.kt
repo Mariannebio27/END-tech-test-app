@@ -11,4 +11,9 @@ class ProductRepositoryImpl(private val service: ProductService) : ProductReposi
 
         return getProducts()
     }
+
+    override fun clearAllProducts(): Observable<GlobalProducts> {
+
+        return getProducts()
+    }
 }
