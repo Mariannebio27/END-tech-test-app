@@ -3,7 +3,7 @@ package com.mariannecunha.data.di
 import android.content.Context
 import androidx.preference.PreferenceManager
 import com.mariannecunha.data.ProductRepositoryImpl
-import com.mariannecunha.data.search.ProductService
+import com.mariannecunha.data.remote.ProductService
 import com.mariannecunha.domain.repository.ProductRepository
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

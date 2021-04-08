@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="spacing_200">200dp</dimen>
+    <dimen name="spacing_300">300dp</dimen>
+    <dimen name="spacing_400">400dp</dimen>
+    <dimen name="spacing_600">600dp</dimen>
+    <dimen name="spacing_20">20dp</dimen>
+    <dimen name="spacing_713">713dp</dimen>
+    <dimen name="spacing_380">380dp</dimen>
+    <dimen name="spacing_15">15dp</dimen>
+    <dimen name="spacing_450">450dp</dimen>
+    <dimen name="spacing_10">10dp</dimen>
+    <dimen name="spacing_50">50dp</dimen>
+    <dimen name="spacing_40">40dp</dimen>
+    <dimen name="spacing_100">100dp</dimen>
+    <dimen name="spacing_220">220dp</dimen>
+    <dimen name="spacing_250">250dp</dimen>
+    <dimen name="spacing_140">140dp</dimen>
+    <dimen name="spacing_150">150dp</dimen>
+    <dimen name="spacing_69">69dp</dimen>
+    <dimen name="spacing_60">60dp</dimen>
+    <dimen name="spacing_90">90dp</dimen>
+    <dimen name="spacing_72">72dp</dimen>
+    <dimen name="spacing_38">38dp</dimen>
+    <dimen name="spacing_30">30dp</dimen>
+    <dimen name="spacing_500">500dp</dimen>
+</resources>

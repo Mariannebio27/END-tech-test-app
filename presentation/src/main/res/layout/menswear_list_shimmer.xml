@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginHorizontal="20dp"
+    android:layout_marginHorizontal="@dimen/spacing_20"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <View
         android:id="@+id/product_image_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/spacing_100"
+        android:layout_height="@dimen/spacing_140"
         android:background="#ddd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +20,10 @@
 
     <TextView
         android:id="@+id/product_name_text_view"
-        android:layout_width="150dp"
+        android:layout_width="@dimen/spacing_150"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/spacing_10"
         android:background="#ddd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,12 +32,12 @@
 
     <TextView
         android:id="@+id/product_price_text_view"
-        android:layout_width="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="@dimen/spacing_100"
+        android:layout_marginTop="@dimen/spacing_10"
         android:layout_height="wrap_content"
         android:background="#ddd"
         android:gravity="center"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/spacing_20"
         app:layout_constraintTop_toBottomOf="@id/product_name_text_view"
         app:layout_constraintEnd_toEndOf="@+id/product_name_text_view"
         app:layout_constraintBottom_toTopOf="@id/product_2_image_view"
@@ -45,10 +45,10 @@
 
     <View
         android:id="@+id/product_2_image_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#ddd"
-        android:layout_marginTop="20dp"
+        android:layout_width="@dimen/spacing_100"
+        android:layout_height="@dimen/spacing_140"
+        android:background="@color/grey"
+        android:layout_marginTop="@dimen/spacing_20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/product_name_text_view"
@@ -57,21 +57,21 @@
 
     <TextView
         android:id="@+id/product_2_name_text_view"
-        android:layout_width="150dp"
+        android:layout_width="@dimen/spacing_150"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/spacing_10"
         android:gravity="center"
-        android:background="#ddd"
+        android:background="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/product_2_image_view" />
 
     <TextView
         android:id="@+id/product_2_price_text_view"
-        android:layout_width="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="@dimen/spacing_100"
+        android:layout_marginTop="@dimen/spacing_10"
         android:layout_height="wrap_content"
-        android:background="#ddd"
+        android:background="@color/grey"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/product_2_name_text_view"
         app:layout_constraintEnd_toEndOf="@+id/product_2_name_text_view"

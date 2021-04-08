@@ -1,137 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:shimmer="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/ad_top_image_view"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:elevation="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/home_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:background="#ffffff"
-        android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/latest_products_text_view" />
 
-    <ImageView
-        android:id="@+id/logo_image_view"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:scaleType="centerCrop"
-        android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_recycler_view"
-        app:layout_constraintBottom_toTopOf="@id/ad_bottom_image_view"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#ebebeb"
-        android:elevation="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_recycler_view"
-        app:layout_constraintBottom_toTopOf="@id/ad_bottom_image_view"
-        />
-
-    <ImageView
-        android:id="@+id/ad_bottom_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:elevation="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
-
-    <TextView
-        android:id="@+id/home_empty_state"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/no_list_found"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/latest_products_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="20dp"
-        android:text="LATEST PRODUCTS"
-        android:fontFamily="@fonts/roboto_regular"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ad_top_image_view" />
-
-    <TextView
-        android:id="@+id/phrase_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="1dp"
-        android:text="CONVERSE X KIM JONES"
-        android:textSize="30sp"
-        android:fontFamily="@fonts/roboto_black"
-        android:textColor="#ffffff"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="@id/ad_top_image_view"/>
-
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/shimmer_view_container"
-        android:layout_width="380dp"
-        android:layout_height="713dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="@id/logo_image_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
-        shimmer:duration="800">
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/success_constraint_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-            <include layout="@layout/menswear_list_shimmer" />
+            <ImageView
+                android:id="@+id/ad_top_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_400"
+                android:elevation="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
 
-            <include layout="@layout/menswear_list_shimmer" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_500"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:background="@color/white"
+                android:visibility="gone"
+                android:elevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view" />
 
-            <include layout="@layout/menswear_list_shimmer" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/logo_constraint_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_50"
+                android:background="@color/logo_background_grey"
+                app:layout_constraintBottom_toTopOf="@id/ad_bottom_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/logo_image_view"
+                    android:layout_width="@dimen/spacing_100"
+                    android:layout_height="@dimen/spacing_40"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/empty_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_500"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
+                app:layout_constraintBottom_toTopOf="@id/logo_constraint_layout"/>
+
+            <ImageView
+                android:id="@+id/ad_bottom_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_200"
+                android:elevation="1dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/latest_products_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_20"
+                android:layout_marginTop="@dimen/spacing_15"
+                android:fontFamily="@fonts/roboto_regular"
+                android:text="@string/latest_products"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ad_top_image_view" />
+
+            <TextView
+                android:id="@+id/phrase_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:fontFamily="@fonts/roboto_black"
+                android:text="@string/converse_x_kim_jones"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@id/ad_top_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/spacing_20"
+                android:paddingBottom="@dimen/spacing_20"
+                android:elevation="3dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/logo_constraint_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
+                shimmer:duration="800">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include layout="@layout/menswear_list_shimmer" />
+
+                    <include layout="@layout/menswear_list_shimmer" />
+
+                    <include layout="@layout/menswear_list_shimmer" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <include
+                android:id="@+id/empty_error_view"
+                layout="@layout/view_empty_error"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_500"
+                android:layout_marginVertical="@dimen/spacing_10"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
+                app:layout_constraintBottom_toTopOf="@id/logo_constraint_layout"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <include
+            android:id="@+id/error_view"
+            layout="@layout/view_error"
+            android:layout_width="@dimen/spacing_400"
+            android:layout_height="@dimen/spacing_600"
+            android:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

@@ -1,3 +1,7 @@
 <resources>
     <string name="no_list_found">No list found.</string>
+    <string name="latest_products">LATEST PRODUCTS</string>
+    <string name="converse_x_kim_jones">CONVERSE X KIM JONES</string>
+    <string name="empty_list_returned">An error occurred. Try again later.</string>
+    <string name="error_connection_message">A problem occurred.\nCheck your internet connection.</string>
 </resources>

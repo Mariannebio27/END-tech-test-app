@@ -1,9 +1,7 @@
 package com.mariannecunha.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
@@ -45,27 +43,40 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
     }
 
     override fun render(state: HomeViewState) = with(binding) {
-        setUpShimmer()
 
-        if (state.products.products.isEmpty()) {
-            homeRecyclerView.visible = false
-            homeEmptyState.visible = true
-        } else {
-            homeRecyclerView.visible = true
-            homeEmptyState.visible = false
-            shimmerViewContainer.visibility = View.GONE
-            shimmerViewContainer.stopShimmer()
-            adapter.updateProducts(state.products.products)
-        }
-
-        if (state.error != null) {
-            Toast.makeText(this@HomeActivity, "We had an error.", Toast.LENGTH_SHORT).show()
-            Log.e("TAG", "Error loading: ${state.error.localizedMessage}")
+        when {
+            state.isLoading -> {
+                successConstraintLayout.show()
+                emptyErrorView.emptyErrorLayout.hide()
+                showLoadingState()
+            }
+            state.error != null -> {
+                successConstraintLayout.hide()
+                emptyErrorView.emptyErrorLayout.hide()
+                errorView.errorLayout.show()
+            }
+            state.products.products.isEmpty() -> {
+                successConstraintLayout.show()
+                errorView.errorLayout.hide()
+                shimmerViewContainer.hide()
+                shimmerViewContainer.stopShimmer()
+                emptyErrorView.emptyErrorLayout.show()
+            }
+            else -> {
+                successConstraintLayout.show()
+                emptyErrorView.emptyErrorLayout.hide()
+                errorView.errorLayout.hide()
+                homeRecyclerView.show()
+                shimmerViewContainer.hide()
+                shimmerViewContainer.stopShimmer()
+                adapter.updateProducts(state.products.products)
+            }
         }
     }
 
     private fun setUpRecyclerView() = with(binding) {
-        val layoutManager = GridLayoutManager(this@HomeActivity, 2, GridLayoutManager.HORIZONTAL, false)
+        val layoutManager =
+            GridLayoutManager(this@HomeActivity, 2, GridLayoutManager.HORIZONTAL, false)
 
         homeRecyclerView.setHasFixedSize(true)
         homeRecyclerView.layoutManager = layoutManager
@@ -86,7 +97,7 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
             .into(adBottomImageView)
     }
 
-    private fun setUpShimmer() = with(binding.shimmerViewContainer) {
+    private fun showLoadingState() = with(binding.shimmerViewContainer) {
         visibility = View.VISIBLE
         startShimmer()
     }
@@ -102,4 +113,12 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
         set(value) {
             visibility = if (value) View.VISIBLE else View.INVISIBLE
         }
+
+    fun View?.show() {
+        this?.visibility = View.VISIBLE
+    }
+
+    fun View?.hide() {
+        this?.visibility = View.GONE
+    }
 }
