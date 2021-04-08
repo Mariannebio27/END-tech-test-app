@@ -29,36 +29,19 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/home_recycler_view"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_500"
-                android:layout_marginTop="@dimen/spacing_10"
-                android:background="@color/white"
-                android:visibility="gone"
+            <TextView
+                android:id="@+id/phrase_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="1dp"
+                android:fontFamily="@fonts/roboto_black"
+                android:text="@string/converse_x_kim_jones"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="@id/ad_top_image_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view" />
-
-            <View
-                android:id="@+id/empty_list_view"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_500"
-                android:layout_marginTop="@dimen/spacing_10"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
-                app:layout_constraintBottom_toTopOf="@id/logo_view"/>
-
-            <ImageView
-                android:id="@+id/ad_bottom_image_view"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_200"
-                android:scaleType="centerCrop"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/latest_products_text_view"
@@ -74,19 +57,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ad_top_image_view" />
 
-            <TextView
-                android:id="@+id/phrase_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:elevation="1dp"
-                android:fontFamily="@fonts/roboto_black"
-                android:text="@string/converse_x_kim_jones"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                app:layout_constraintBottom_toBottomOf="@id/ad_top_image_view"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/home_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_500"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:background="@color/white"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view" />
 
             <com.facebook.shimmer.ShimmerFrameLayout
                 android:id="@+id/shimmer_view_container"
@@ -118,6 +98,17 @@
 
             </com.facebook.shimmer.ShimmerFrameLayout>
 
+            <View
+                android:id="@+id/empty_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_500"
+                android:layout_marginTop="@dimen/spacing_10"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
+                app:layout_constraintBottom_toTopOf="@id/logo_view"/>
+
             <include
                 android:id="@+id/empty_error_view"
                 layout="@layout/view_empty_error"
@@ -127,15 +118,23 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
-                app:layout_constraintBottom_toTopOf="@id/logo_view"/>
+                app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"/>
 
             <include
                 android:id="@+id/logo_view"
                 layout="@layout/view_logo"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/spacing_50"
-                app:layout_constraintBottom_toTopOf="@id/ad_bottom_image_view"
+                app:layout_constraintTop_toBottomOf="@id/empty_list_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                android:id="@+id/ad_bottom_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_200"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/logo_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"/>
 

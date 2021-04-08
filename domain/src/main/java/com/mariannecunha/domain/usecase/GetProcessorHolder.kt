@@ -15,7 +15,7 @@ class GetProcessorHolder(
         actions.flatMap {
             productRepository.getProducts()
                 .map { productWrapper ->
-                    HomeResult.LoadAllMenswearResult.Success(emptyList())
+                    HomeResult.LoadAllMenswearResult.Success(productWrapper.products.sortedByDescending { it.id })
                 }
                 .cast(HomeResult.LoadAllMenswearResult::class.java)
                 .onErrorReturn(HomeResult.LoadAllMenswearResult::Failure)
