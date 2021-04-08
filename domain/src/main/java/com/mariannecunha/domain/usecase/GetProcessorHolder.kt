@@ -4,7 +4,7 @@ import com.mariannecunha.core.util.SchedulerProvider
 import com.mariannecunha.domain.action.HomeAction
 import com.mariannecunha.domain.repository.ProductRepository
 import com.mariannecunha.domain.result.HomeResult
-import io.reactivex.ObservableTransformer
+import io.reactivex.rxjava3.core.ObservableTransformer
 
 class GetProcessorHolder(
     private val productRepository: ProductRepository,
@@ -21,7 +21,7 @@ class GetProcessorHolder(
                 .onErrorReturn(HomeResult.LoadAllMenswearResult::Failure)
                 .subscribeOn(schedulerProvider.subscribe)
                 .observeOn(schedulerProvider.observe)
-                .startWith(HomeResult.LoadAllMenswearResult.Loading)
+                .startWithItem(HomeResult.LoadAllMenswearResult.Loading)
         }
     }
 }

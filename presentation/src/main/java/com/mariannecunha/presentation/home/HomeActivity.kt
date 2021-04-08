@@ -9,8 +9,8 @@ import com.mariannecunha.core.extensions.hide
 import com.mariannecunha.core.extensions.show
 import com.mariannecunha.presentation.R
 import com.mariannecunha.presentation.databinding.ActivityHomeBinding
-import io.reactivex.Observable
-import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.disposables.CompositeDisposable
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

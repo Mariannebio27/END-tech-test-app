@@ -10,7 +10,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -52,7 +52,7 @@ private fun createRetrofit(okHttpClient: OkHttpClient): Retrofit {
     return Retrofit.Builder()
         .baseUrl("https://www.endclothing.com/media/catalog/")
         .client(okHttpClient)
-        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }

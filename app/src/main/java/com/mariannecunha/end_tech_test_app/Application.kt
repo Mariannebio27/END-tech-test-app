@@ -1,9 +1,8 @@
-package com.mariannecunha.end_tech_test_app.app
+package com.mariannecunha.end_tech_test_app
 
 import android.app.Application
 import com.mariannecunha.core.di.coreModule
 import com.mariannecunha.data.di.dataModule
-import com.mariannecunha.end_tech_test_app.BuildConfig
 import com.mariannecunha.presentation.di.presentationModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.logger.AndroidLogger

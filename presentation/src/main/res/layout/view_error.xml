@@ -22,7 +22,7 @@
         android:layout_marginTop="@dimen/spacing_38"
         android:fontFamily="@font/roboto_regular"
         android:gravity="center"
-        android:text="@string/error_connection_message"
+        android:text="@string/error_message"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"

@@ -30,9 +30,9 @@
 
 package com.mariannecunha.core.extensions
 
-import io.reactivex.Observable
-import io.reactivex.annotations.CheckReturnValue
-import io.reactivex.annotations.SchedulerSupport
+import io.reactivex.rxjava3.annotations.CheckReturnValue
+import io.reactivex.rxjava3.annotations.SchedulerSupport
+import io.reactivex.rxjava3.core.Observable
 
 @CheckReturnValue
 @SchedulerSupport(SchedulerSupport.NONE)

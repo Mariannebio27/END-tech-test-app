@@ -8,10 +8,10 @@ import com.mariannecunha.domain.result.HomeResult
 import com.mariannecunha.domain.result.HomeResult.LoadAllMenswearResult
 import com.mariannecunha.domain.usecase.GetProcessorHolder
 import com.mariannecunha.presentation.home.HomeIntent.LoadAllMenswearIntent
-import io.reactivex.Observable
-import io.reactivex.ObservableTransformer
-import io.reactivex.functions.BiFunction
-import io.reactivex.subjects.PublishSubject
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.ObservableTransformer
+import io.reactivex.rxjava3.functions.BiFunction
+import io.reactivex.rxjava3.subjects.PublishSubject
 
 class HomeViewModel(private val getProcessorHolder: GetProcessorHolder) :
     ViewModel(),

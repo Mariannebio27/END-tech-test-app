@@ -1,6 +1,6 @@
 package com.mariannecunha.core.util
 
-import io.reactivex.Scheduler
+import io.reactivex.rxjava3.core.Scheduler
 
 data class SchedulerProvider(
     val subscribe: Scheduler,

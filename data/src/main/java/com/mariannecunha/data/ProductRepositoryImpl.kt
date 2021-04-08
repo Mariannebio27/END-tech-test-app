@@ -3,7 +3,7 @@ package com.mariannecunha.data
 import com.mariannecunha.data.remote.ProductService
 import com.mariannecunha.domain.model.ProductsWrapper
 import com.mariannecunha.domain.repository.ProductRepository
-import io.reactivex.Observable
+import io.reactivex.rxjava3.core.Observable
 
 class ProductRepositoryImpl(private val service: ProductService) : ProductRepository {
 
