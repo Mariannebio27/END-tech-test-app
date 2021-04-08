@@ -4,4 +4,7 @@
     <string name="converse_x_kim_jones">CONVERSE X KIM JONES</string>
     <string name="empty_list_returned">An error occurred. Try again later.</string>
     <string name="error_connection_message">A problem occurred.\nCheck your internet connection.</string>
+    <string name="logo_url">https://www.logolynx.com/images/logolynx/s_51/51195aa688e0fee277f2e35f4fb780fe.jpeg</string>
+    <string name="bottom_ad_url">https://media.endclothing.com/end-features/prodfeatures/84f9ea34-a9a6-4731-9e36-464d828bd1ef_H04859_launches_hero_landscape_5.jpg?auto=compress,format</string>
+    <string name="top_ad_url">https://media.endclothing.com/end-features/f_auto,q_auto,w_780/prodfeatures/241bc4c2-e279-4362-8285-23753d8c29e1_thumb.jpg?auto=compress,format</string>
 </resources>

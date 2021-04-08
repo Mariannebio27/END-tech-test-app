@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.End_tech_test_app">
-        <activity android:name="com.mariannecunha.presentation.HomeActivity">
+        <activity android:name="com.mariannecunha.presentation.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

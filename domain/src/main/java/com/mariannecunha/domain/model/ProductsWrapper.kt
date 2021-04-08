@@ -1,5 +1,5 @@
 package com.mariannecunha.domain.model
 
-data class GlobalProducts(
+data class ProductsWrapper(
     val products: MutableList<Product>
 )

@@ -1,19 +1,21 @@
-package com.mariannecunha.presentation
+package com.mariannecunha.domain.usecase
 
-import com.mariannecunha.core.util.BaseSchedulerProvider
+import com.mariannecunha.core.util.SchedulerProvider
+import com.mariannecunha.domain.action.HomeAction
+import com.mariannecunha.domain.result.HomeResult
 import com.mariannecunha.domain.repository.ProductRepository
 import io.reactivex.ObservableTransformer
 
-class HomeProcessorHolder(
+class GetProcessorHolder(
     private val productRepository: ProductRepository,
-    private val schedulerProvider: BaseSchedulerProvider
+    private val schedulerProvider: SchedulerProvider
 ) {
 
-    val loadAllMenswearProcessor = ObservableTransformer<HomeAction, HomeResult.LoadAllMenswearResult> { actions ->
+    operator fun invoke()  = ObservableTransformer<HomeAction, HomeResult.LoadAllMenswearResult> { actions ->
         actions.flatMap {
             productRepository.getProducts()
-                .map { products ->
-                    HomeResult.LoadAllMenswearResult.Success(products)
+                .map { productWrapper ->
+                    HomeResult.LoadAllMenswearResult.Success(emptyList())
                 }
                 .cast(HomeResult.LoadAllMenswearResult::class.java)
                 .onErrorReturn(HomeResult.LoadAllMenswearResult::Failure)

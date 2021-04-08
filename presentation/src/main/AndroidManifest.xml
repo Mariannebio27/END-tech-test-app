@@ -3,7 +3,7 @@
     package="com.mariannecunha.presentation">
 
     <application>
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".home.HomeActivity"></activity>
     </application>
 
 </manifest>

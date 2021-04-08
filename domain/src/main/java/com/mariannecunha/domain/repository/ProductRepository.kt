@@ -1,8 +1,8 @@
 package com.mariannecunha.domain.repository
 
-import com.mariannecunha.domain.model.GlobalProducts
+import com.mariannecunha.domain.model.ProductsWrapper
 import io.reactivex.Observable
 
 interface ProductRepository {
-    fun getProducts(): Observable<GlobalProducts>
+    fun getProducts(): Observable<ProductsWrapper>
 }
