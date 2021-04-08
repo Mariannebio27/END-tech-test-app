@@ -2,8 +2,8 @@ package com.mariannecunha.domain.usecase
 
 import com.mariannecunha.core.util.SchedulerProvider
 import com.mariannecunha.domain.action.HomeAction
-import com.mariannecunha.domain.result.HomeResult
 import com.mariannecunha.domain.repository.ProductRepository
+import com.mariannecunha.domain.result.HomeResult
 import io.reactivex.ObservableTransformer
 
 class GetProcessorHolder(
@@ -11,7 +11,7 @@ class GetProcessorHolder(
     private val schedulerProvider: SchedulerProvider
 ) {
 
-    operator fun invoke()  = ObservableTransformer<HomeAction, HomeResult.LoadAllMenswearResult> { actions ->
+    operator fun invoke() = ObservableTransformer<HomeAction, HomeResult.LoadAllMenswearResult> { actions ->
         actions.flatMap {
             productRepository.getProducts()
                 .map { productWrapper ->

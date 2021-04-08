@@ -4,16 +4,17 @@ import androidx.lifecycle.ViewModel
 import com.mariannecunha.core.base.MviViewModel
 import com.mariannecunha.core.extensions.notOfType
 import com.mariannecunha.domain.action.HomeAction
-import com.mariannecunha.domain.usecase.GetProcessorHolder
-import com.mariannecunha.presentation.home.HomeIntent.LoadAllMenswearIntent
 import com.mariannecunha.domain.result.HomeResult
 import com.mariannecunha.domain.result.HomeResult.LoadAllMenswearResult
+import com.mariannecunha.domain.usecase.GetProcessorHolder
+import com.mariannecunha.presentation.home.HomeIntent.LoadAllMenswearIntent
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.functions.BiFunction
 import io.reactivex.subjects.PublishSubject
 
-class HomeViewModel(private val getProcessorHolder: GetProcessorHolder) : ViewModel(),
+class HomeViewModel(private val getProcessorHolder: GetProcessorHolder) :
+    ViewModel(),
     MviViewModel<HomeIntent, HomeViewState> {
 
     private val intentsSubject: PublishSubject<HomeIntent> = PublishSubject.create()

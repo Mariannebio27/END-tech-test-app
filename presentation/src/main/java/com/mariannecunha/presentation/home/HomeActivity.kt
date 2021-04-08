@@ -1,14 +1,13 @@
 package com.mariannecunha.presentation.home
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.mariannecunha.core.base.MviView
 import com.mariannecunha.core.extensions.hide
 import com.mariannecunha.core.extensions.show
-import com.mariannecunha.presentation.*
+import com.mariannecunha.presentation.R
 import com.mariannecunha.presentation.databinding.ActivityHomeBinding
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
