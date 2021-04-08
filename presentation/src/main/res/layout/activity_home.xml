@@ -41,28 +41,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/latest_products_text_view" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/logo_constraint_layout"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/spacing_50"
-                android:background="@color/logo_background_grey"
-                app:layout_constraintBottom_toTopOf="@id/ad_bottom_image_view"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <ImageView
-                    android:id="@+id/logo_image_view"
-                    android:layout_width="@dimen/spacing_100"
-                    android:layout_height="@dimen/spacing_40"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
             <View
                 android:id="@+id/empty_list_view"
                 android:layout_width="match_parent"
@@ -72,7 +50,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
-                app:layout_constraintBottom_toTopOf="@id/logo_constraint_layout"/>
+                app:layout_constraintBottom_toTopOf="@id/logo_view"/>
 
             <ImageView
                 android:id="@+id/ad_bottom_image_view"
@@ -123,7 +101,7 @@
                 android:elevation="3dp"
                 android:orientation="vertical"
                 android:visibility="gone"
-                app:layout_constraintBottom_toTopOf="@id/logo_constraint_layout"
+                app:layout_constraintBottom_toTopOf="@id/logo_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
@@ -155,7 +133,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/latest_products_text_view"
-                app:layout_constraintBottom_toTopOf="@id/logo_constraint_layout"/>
+                app:layout_constraintBottom_toTopOf="@id/logo_view"/>
+
+            <include
+                android:id="@+id/logo_view"
+                layout="@layout/view_logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/spacing_50"
+                android:elevation="0dp"
+                app:layout_constraintBottom_toTopOf="@id/ad_bottom_image_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -168,3 +156,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
+

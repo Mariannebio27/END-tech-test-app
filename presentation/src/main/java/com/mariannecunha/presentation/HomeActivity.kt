@@ -90,7 +90,7 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
 
         Glide.with(this@HomeActivity)
             .load("https://www.logolynx.com/images/logolynx/s_51/51195aa688e0fee277f2e35f4fb780fe.jpeg")
-            .into(logoImageView)
+            .into(logoView.logoImageView)
 
         Glide.with(this@HomeActivity)
             .load("https://media.endclothing.com/end-features/prodfeatures/84f9ea34-a9a6-4731-9e36-464d828bd1ef_H04859_launches_hero_landscape_5.jpg?auto=compress,format")
