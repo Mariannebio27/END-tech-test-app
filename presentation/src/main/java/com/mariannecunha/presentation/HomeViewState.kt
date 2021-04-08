@@ -1,8 +1,8 @@
 package com.mariannecunha.presentation
 
+import com.mariannecunha.core.base.MviViewState
 import com.mariannecunha.domain.model.GlobalProducts
 import com.mariannecunha.domain.model.Product
-import com.mariannecunha.domain.mvibase.MviViewState
 
 data class HomeViewState(
     val isLoading: Boolean,

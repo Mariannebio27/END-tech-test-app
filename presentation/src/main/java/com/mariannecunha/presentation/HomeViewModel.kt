@@ -1,12 +1,10 @@
 package com.mariannecunha.presentation
 
 import androidx.lifecycle.ViewModel
-import com.mariannecunha.domain.HomeAction
-import com.mariannecunha.domain.HomeResult
-import com.mariannecunha.domain.HomeResult.LoadAllMenswearResult
-import com.mariannecunha.domain.mvibase.MviViewModel
-import com.mariannecunha.domain.util.notOfType
+import com.mariannecunha.core.base.MviViewModel
+import com.mariannecunha.core.extensions.notOfType
 import com.mariannecunha.presentation.HomeIntent.LoadAllMenswearIntent
+import com.mariannecunha.presentation.HomeResult.LoadAllMenswearResult
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.functions.BiFunction
@@ -14,7 +12,8 @@ import io.reactivex.subjects.PublishSubject
 
 class HomeViewModel(
     private val actionProcessorHolder: HomeProcessorHolder
-) : ViewModel(), MviViewModel<HomeIntent, HomeViewState> {
+) : ViewModel(),
+    MviViewModel<HomeIntent, HomeViewState> {
 
     private val intentsSubject: PublishSubject<HomeIntent> = PublishSubject.create()
     private val statesObservable: Observable<HomeViewState> = compose()

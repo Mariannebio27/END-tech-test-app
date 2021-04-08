@@ -1,7 +1,7 @@
 package com.mariannecunha.presentation
 
-import com.mariannecunha.domain.mvibase.MviIntent
+import com.mariannecunha.core.base.MviIntent
 
-sealed class HomeIntent : MviIntent {
+sealed class HomeIntent : com.mariannecunha.core.base.MviIntent {
     object LoadAllMenswearIntent : HomeIntent()
 }

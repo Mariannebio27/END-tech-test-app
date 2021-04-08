@@ -16,8 +16,9 @@ class MenswearAdapter() : RecyclerView.Adapter<MenswearAdapter.MenswearViewHolde
         if (this.products.isNotEmpty()) {
             this.products.clear()
         }
+        val sortedProducts = products.sortedByDescending { it.id }
 
-        this.products.addAll(products ?: listOf())
+        this.products.addAll(sortedProducts ?: listOf())
         notifyDataSetChanged()
     }
 

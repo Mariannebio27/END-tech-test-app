@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
-import com.mariannecunha.domain.mvibase.MviView
+import com.mariannecunha.core.base.MviView
 import com.mariannecunha.presentation.databinding.ActivityHomeBinding
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
@@ -72,8 +72,16 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
 
     private fun setUpImageView() = with(binding) {
         Glide.with(this@HomeActivity)
-            .load("https://media.endclothing.com/media/wysiwyg/square_2.jpg")
-            .into(adImageView)
+            .load("https://media.endclothing.com/end-features/f_auto,q_auto,w_780/prodfeatures/241bc4c2-e279-4362-8285-23753d8c29e1_thumb.jpg?auto=compress,format")
+            .into(adTopImageView)
+
+        Glide.with(this@HomeActivity)
+            .load("https://www.logolynx.com/images/logolynx/s_51/51195aa688e0fee277f2e35f4fb780fe.jpeg")
+            .into(logoImageView)
+
+        Glide.with(this@HomeActivity)
+            .load("https://media.endclothing.com/end-features/prodfeatures/84f9ea34-a9a6-4731-9e36-464d828bd1ef_H04859_launches_hero_landscape_5.jpg?auto=compress,format")
+            .into(adBottomImageView)
     }
 
     private fun bind() {

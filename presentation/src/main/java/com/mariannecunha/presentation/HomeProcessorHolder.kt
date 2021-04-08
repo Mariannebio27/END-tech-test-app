@@ -1,9 +1,7 @@
 package com.mariannecunha.presentation
 
-import com.mariannecunha.domain.HomeAction
-import com.mariannecunha.domain.HomeResult
+import com.mariannecunha.core.util.BaseSchedulerProvider
 import com.mariannecunha.domain.repository.ProductRepository
-import com.mariannecunha.domain.util.BaseSchedulerProvider
 import io.reactivex.ObservableTransformer
 
 class HomeProcessorHolder(
