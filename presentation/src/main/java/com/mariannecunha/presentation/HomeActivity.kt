@@ -45,7 +45,7 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
     }
 
     override fun render(state: HomeViewState) = with(binding) {
-        homeProgressBar.visible = state.isLoading
+        setUpShimmer()
 
         if (state.products.products.isEmpty()) {
             homeRecyclerView.visible = false
@@ -53,6 +53,8 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
         } else {
             homeRecyclerView.visible = true
             homeEmptyState.visible = false
+            shimmerViewContainer.visibility = View.GONE
+            shimmerViewContainer.stopShimmer()
             adapter.updateProducts(state.products.products)
         }
 
@@ -82,6 +84,11 @@ class HomeActivity : AppCompatActivity(), MviView<HomeIntent, HomeViewState> {
         Glide.with(this@HomeActivity)
             .load("https://media.endclothing.com/end-features/prodfeatures/84f9ea34-a9a6-4731-9e36-464d828bd1ef_H04859_launches_hero_landscape_5.jpg?auto=compress,format")
             .into(adBottomImageView)
+    }
+
+    private fun setUpShimmer() = with(binding.shimmerViewContainer) {
+        visibility = View.VISIBLE
+        startShimmer()
     }
 
     private fun bind() {
