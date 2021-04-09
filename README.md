@@ -2,7 +2,7 @@
 
 
 ## Resume 
-This application gets a products list from an API endpoint.
+This application gets a product list from an API endpoint.
 
 ## Screens 
  ![Tela de erro](/pictures/home_screen_top.png)
